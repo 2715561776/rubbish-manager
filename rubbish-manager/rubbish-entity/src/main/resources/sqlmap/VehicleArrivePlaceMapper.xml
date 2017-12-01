@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.VehicleArrivePlaceMapper">
+
+	<resultMap id="VehicleArrivePlaceResultMap" type="com.richeninfo.rubbish.entity.model.VehicleArrivePlace">
+			<id property="id" column="id" jdbcType="INTEGER"/>
+			<result property="vehicleId" column="vehicle_id" jdbcType="INTEGER"/>
+			<result property="cardNumber" column="CARD_NUMBER" jdbcType="VARCHAR"/>
+			<result property="facilityNo" column="FACILITY_NO" jdbcType="VARCHAR"/>
+			<result property="arriveTime" column="arrive_time" jdbcType="TIMESTAMP"/>
+			<result property="arrivePlaceId" column="arrive_place_id" jdbcType="INTEGER"/>
+			<result property="arrivePlaceName" column="arrive_place_name" jdbcType="VARCHAR"/>
+			<result property="arrivePlaceType" column="arrive_place_type" jdbcType="INTEGER"/>
+			<result property="status" column="status" jdbcType="INTEGER"/>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="Base_Column_List">
+		id,vehicle_id,CARD_NUMBER,FACILITY_NO,arrive_time,arrive_place_id,arrive_place_name,arrive_place_type,status
+	</sql>
+	
+	<delete id="deleteAll">
+		DELETE FROM rz_vehicle_arrive_place
+	</delete>
+</mapper>

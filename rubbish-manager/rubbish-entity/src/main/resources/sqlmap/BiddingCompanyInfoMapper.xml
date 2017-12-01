@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.BiddingCompanyInfoMapper">
+
+	<resultMap id="BiddingCompanyInfoResultMap" type="com.richeninfo.rubbish.entity.model.BiddingCompanyInfo">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="companyName" column="COMPANY_NAME" jdbcType="VARCHAR"/>
+		<result property="contacter" column="CONTACTER" jdbcType="VARCHAR"/>
+		<result property="status" column="STATUS" jdbcType="VARCHAR"/>
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+		<collection property="vehicleList" column="ID" select="com.richeninfo.rubbish.entity.mapper.VehicleMapper.findVehicleByCompanyId"></collection>
+	</resultMap>
+
+
+	<resultMap id="BiddingCompanyInfo" type="com.richeninfo.rubbish.entity.model.BiddingCompanyInfo">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="companyName" column="COMPANY_NAME" jdbcType="VARCHAR"/>
+		<result property="contacter" column="CONTACTER" jdbcType="VARCHAR"/>
+		<result property="status" column="STATUS" jdbcType="VARCHAR"/>
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		ID,COMPANY_NAME,CONTACTER,STATUS,CREATED_BY,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME
+	</sql>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_bidding_company_info
+	</delete>
+
+	<select id="queryBiddingCompanyInfoWithVehicle" resultMap="BiddingCompanyInfoResultMap">
+	  	SELECT * from rz_bidding_company_info
+	</select>
+	<select id="findBiddingCompany" resultMap="BiddingCompanyInfo" parameterType="int">
+		SELECT * from rz_bidding_company_info where id=#{id}
+	</select>
+</mapper>

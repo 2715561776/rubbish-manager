@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.SysTasklogMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		ID,Task_Code,Task_Name,Method_Name,LastPerform_Time,LastConsume_Time,Perform_Result,Message,Created_Time,Addition1,Addition2,Addition3,Addition4
+	</sql>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_sys_tasklog
+	</delete>
+</mapper>

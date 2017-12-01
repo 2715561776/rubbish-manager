@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>rubbish-entity</artifactId>
+    <parent>
+        <artifactId>rubbish-parent</artifactId>
+        <groupId>com.richeninfo</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../rubbish-parent/pom.xml</relativePath>
+    </parent>
+    <!-- build exec -->
+    <build>
+        <plugins>
+            <!-- spring boot exec jar -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                    <mainClass>com.richeninfo.rubbish.entity.EntityApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>springloaded</artifactId>
+                        <version>1.2.0.RELEASE</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- dependencies jar -->
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.oracle</groupId>
+            <artifactId>ojdbc16</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.itcloudinfo</groupId>
+            <artifactId>icf-commons-javautil</artifactId>
+        </dependency>
+        <!-- profile package -->
+        <dependency>
+            <groupId>com.itcloudinfo</groupId>
+            <artifactId>spring-boot-starter-mybatisplus</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.richeninfo</groupId>
+            <artifactId>rubbish-profile</artifactId>
+        </dependency>
+        <!-- test package -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>

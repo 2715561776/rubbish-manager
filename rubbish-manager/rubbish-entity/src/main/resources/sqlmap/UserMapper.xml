@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.UserMapper">
+
+	<resultMap id="UserResultMap" type="com.richeninfo.rubbish.entity.model.User">
+		<id property="id" column="id" jdbcType="INTEGER"/>
+		<result property="userName" column="User_Name" jdbcType="VARCHAR"/>
+		<result property="loginName" column="Login_Name" jdbcType="VARCHAR"/>
+		<result property="password" column="Password" jdbcType="VARCHAR"/>
+		<result property="postName" column="Post_Name" jdbcType="VARCHAR"/>
+		<result property="status" column="Status" jdbcType="VARCHAR"/>
+		<result property="memo" column="Memo" jdbcType="VARCHAR"/>
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<resultMap id="UserResultMapWithSysMenu" type="com.richeninfo.rubbish.entity.model.User">
+		<id property="id" column="id" jdbcType="INTEGER"/>
+		<result property="userName" column="User_Name" jdbcType="VARCHAR"/>
+		<result property="loginName" column="Login_Name" jdbcType="VARCHAR"/>
+		<result property="password" column="Password" jdbcType="VARCHAR"/>
+		<result property="postName" column="Post_Name" jdbcType="VARCHAR"/>
+		<result property="status" column="Status" jdbcType="VARCHAR"/>
+		<result property="memo" column="Memo" jdbcType="VARCHAR"/>
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+		<collection property="sysMenuList" column="login_Name" select="com.richeninfo.rubbish.entity.mapper.SysMenuMapper.findSysMenuListByLoginName"></collection>
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id,User_Name,Login_Name,Password,Post_Name,Status,Memo,CREATED_BY,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME
+	</sql>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_user
+	</delete>
+
+	<select id="selectOneByLoginNameAndPassWord" resultMap="UserResultMapWithSysMenu">
+		SELECT * from rz_user  where 1=1 ${ew.sqlSegment}
+	</select>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.VehicleLocuMapper">
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		ID,apply_ID,CARD_NUMBER,FACILITY_ID,FACILITY_NO,CURRENT_TIME,LATITUDE,LONGITUDE,Created_By,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME,place_id,temp_num
+	</sql>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_vehicle_locus
+	</delete>
+</mapper>

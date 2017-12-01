@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.itcloudinfo:icf-commons-ftp:1.0.7-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/icf-commons-ftp/1.0.7-SNAPSHOT/icf-commons-ftp-1.0.7-20171018.070449-3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/icf-commons-ftp/1.0.7-SNAPSHOT/icf-commons-ftp-1.0.7-20171018.070449-3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/icf-commons-ftp/1.0.7-SNAPSHOT/icf-commons-ftp-1.0.7-20171018.070449-3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

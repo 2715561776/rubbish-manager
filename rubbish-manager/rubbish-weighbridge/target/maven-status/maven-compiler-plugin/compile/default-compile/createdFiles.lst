@@ -1,0 +1,8 @@
+com\richeninfo\rubbish\weighbridge\SerialTool.class
+com\richeninfo\rubbish\weighbridge\DSerialPort.class
+com\richeninfo\rubbish\weighbridge\WeighBridgeApplication.class
+com\richeninfo\rubbish\weighbridge\StringToHex.class
+com\richeninfo\rubbish\weighbridge\config\BeanFactory.class
+com\richeninfo\rubbish\weighbridge\config\WebMvcConfig.class
+com\richeninfo\rubbish\weighbridge\ByteTool.class
+com\richeninfo\rubbish\weighbridge\MySerialPort.class

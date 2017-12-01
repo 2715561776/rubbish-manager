@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.SysMenuMapper">
+
+	<resultMap id="SysMenuResultMap" type="com.richeninfo.rubbish.entity.model.SysMenu">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="menuCode" column="MENU_CODE" jdbcType="VARCHAR"/>
+		<result property="menuName" column="MENU_NAME" jdbcType="VARCHAR"/>
+		<result property="menuDesc" column="MENU_DESC" jdbcType="VARCHAR"/>
+		<result property="menuType" column="MENU_TYPE" jdbcType="VARCHAR"/>
+		<result property="menuHref" column="MENU_HREF" jdbcType="VARCHAR"/>
+		<result property="parentId" column="PARENT_ID" jdbcType="VARCHAR"/>
+		<result property="sort" column="SORT" jdbcType="INTEGER"/>
+		<result property="level" column="LEVEL" jdbcType="INTEGER"/>
+		<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="INTEGER"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		ID,MENU_CODE,MENU_NAME,MENU_DESC,MENU_TYPE,MENU_HREF,PARENT_ID,SORT,LEVEL,Created_By,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME
+	</sql>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_sys_menu
+	</delete>
+    <select id="findSysMenuListByLoginName" resultMap="SysMenuResultMap" parameterType="string">
+		select rsm.* from rz_sys_menu rsm,rz_sys_role_menu rsrm,rz_sys_user_role rsur
+where rsur.ROLE_CODE=rsrm.ROLE_CODE and rsrm.MENU_CODE=rsm.MENU_CODE and rsur.USER_NUM=#{loginName} order by rsm.sort asc
+	</select>
+</mapper>

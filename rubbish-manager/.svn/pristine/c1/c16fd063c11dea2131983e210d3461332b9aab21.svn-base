@@ -1,0 +1,9 @@
+#localhost
+datasource.name= dataSource-01
+datasource.url=jdbc:mysql://localhost:3306/rubbish-manager?autoReconnect=true&useUnicode=true&characterEncoding=UTF8
+datasource.username=root
+datasource.password=root
+
+#文件上传地址
+datafile.url=http://180.169.20.145:8094/spring-uploader/
+

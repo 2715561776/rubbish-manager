@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.VehicleMapper">
+
+	<resultMap id="VehicleResultMap" type="com.richeninfo.rubbish.entity.model.Vehicle">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="companyId" column="COMPANY_ID" jdbcType="INTEGER"/>
+		<result property="seq" column="SEQ" jdbcType="VARCHAR"/>
+		<result property="motorcadeName" column="MOTORCADE_NAME" jdbcType="VARCHAR"/>
+		<result property="licensePlatNumber" column="LICENSE_PLAT_NUMBER" jdbcType="VARCHAR"/>
+		<result property="facilityName" column="FACILITY_NAME" jdbcType="VARCHAR"/>
+		<result property="facilityId" column="FACILITY_ID" jdbcType="VARCHAR"/>
+		<result property="simNo" column="SIM_NO" jdbcType="VARCHAR"/>
+		<result property="driverName" column="DRIVER_NAME" jdbcType="VARCHAR"/>
+		<result property="driverPhone" column="DRIVER_PHONE" jdbcType="VARCHAR"/>
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="facilityNo" column="FACILITY_NO" jdbcType="VARCHAR"/>
+		<result property="upload" column="upload" jdbcType="VARCHAR"/>
+	</resultMap>
+
+
+	<resultMap id="VehicleWithBiddingCompanyResultMap" type="com.richeninfo.rubbish.entity.model.Vehicle">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="companyId" column="COMPANY_ID" jdbcType="INTEGER"/>
+		<result property="seq" column="SEQ" jdbcType="VARCHAR"/>
+		<result property="motorcadeName" column="MOTORCADE_NAME" jdbcType="VARCHAR"/>
+		<result property="licensePlatNumber" column="LICENSE_PLAT_NUMBER" jdbcType="VARCHAR"/>
+		<result property="facilityName" column="FACILITY_NAME" jdbcType="VARCHAR"/>
+		<result property="facilityId" column="FACILITY_ID" jdbcType="VARCHAR"/>
+		<result property="simNo" column="SIM_NO" jdbcType="VARCHAR"/>
+		<result property="driverName" column="DRIVER_NAME" jdbcType="VARCHAR"/>
+		<result property="driverPhone" column="DRIVER_PHONE" jdbcType="VARCHAR"/>
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="facilityNo" column="FACILITY_NO" jdbcType="VARCHAR"/>
+		<result property="upload" column="upload" jdbcType="VARCHAR"/>
+		<association property="biddingCompanyInfo" column="COMPANY_ID" select="com.richeninfo.rubbish.entity.mapper.BiddingCompanyInfoMapper.findBiddingCompany"></association>
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		ID,COMPANY_ID,SEQ,MOTORCADE_NAME,LICENSE_PLAT_NUMBER,FACILITY_NAME,FACILITY_ID,FACILITY_NO,DRIVER_NAME,DRIVER_PHONE,CREATED_BY,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME,SIM_NO,upload
+	</sql>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_vehicle
+	</delete>
+    <select id="findVehicleByCompanyId" resultMap="VehicleResultMap" parameterType="int">
+			  select * from rz_vehicle t WHERE t.company_id=#{id}
+	</select>
+    <select id="selectVehicleListWithBiddingCompany" resultMap="VehicleWithBiddingCompanyResultMap">
+SELECT * from rz_vehicle rv left join rz_bidding_company_info rbci on rv.company_id=rbci.id where 1=1 ${ew.sqlSegment}
+	</select>
+</mapper>

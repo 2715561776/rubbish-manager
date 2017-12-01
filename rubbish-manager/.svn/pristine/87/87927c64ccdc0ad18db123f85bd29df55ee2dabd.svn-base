@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.PlaceInfoMapper">
+
+
+	<resultMap id="PlaceInfoResultMap" type="com.richeninfo.rubbish.entity.model.PlaceInfo">
+		<id property="id" column="id" jdbcType="INTEGER"/>
+		<result property="type" column="Type" jdbcType="VARCHAR"/>
+		<result property="name" column="NAME" jdbcType="VARCHAR"/>
+		<result property="contacter" column="CONTACTER" jdbcType="VARCHAR"/>
+		<result property="status" column="STATUS" jdbcType="VARCHAR"/>
+		<result property="places" column="PLACES" jdbcType="VARCHAR"/>
+		<result property="latitude" column="latitude" />
+		<result property="longitude" column="longitude" />
+		<result property="createdBy" column="CREATED_BY" jdbcType="VARCHAR"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="VARCHAR"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<!-- 通用查询结果列 -->
+	<sql id="Base_Column_List">
+		id,Type,NAME,CONTACTER,STATUS,PLACES,CREATED_BY,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME,latitude,longitude
+	</sql>
+
+	<select id="findPlaceInfoById" resultMap="PlaceInfoResultMap" parameterType="int">
+SELECT * from rz_place_info where id=#{id}
+	</select>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_place_info
+	</delete>
+</mapper>

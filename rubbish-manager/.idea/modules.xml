@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rubbish-bd-position/rubbish-bd-position.iml" filepath="$PROJECT_DIR$/rubbish-bd-position/rubbish-bd-position.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-entity/rubbish-entity.iml" filepath="$PROJECT_DIR$/rubbish-entity/rubbish-entity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/rubbish-manager.iml" filepath="$PROJECT_DIR$/.idea/rubbish-manager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-parent/rubbish-parent.iml" filepath="$PROJECT_DIR$/rubbish-parent/rubbish-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-profile/rubbish-profile.iml" filepath="$PROJECT_DIR$/rubbish-profile/rubbish-profile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-service/rubbish-service.iml" filepath="$PROJECT_DIR$/rubbish-service/rubbish-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-web/rubbish-web.iml" filepath="$PROJECT_DIR$/rubbish-web/rubbish-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-webview/rubbish-webview.iml" filepath="$PROJECT_DIR$/rubbish-webview/rubbish-webview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rubbish-weighbridge/rubbish-weighbridge.iml" filepath="$PROJECT_DIR$/rubbish-weighbridge/rubbish-weighbridge.iml" />
+    </modules>
+  </component>
+</project>

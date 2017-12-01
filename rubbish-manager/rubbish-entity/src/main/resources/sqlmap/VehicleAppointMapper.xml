@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.VehicleAppointMapper">
+
+	<resultMap id="VehicleAppointResultMap" type="com.richeninfo.rubbish.entity.model.VehicleAppoint">
+			<id property="id" column="ID" jdbcType="INTEGER"/>
+			<result property="applyId" column="apply_id" jdbcType="INTEGER"/>
+			<result property="estimateWeight" column="ESTIMATE_WEIGHT" jdbcType="DOUBLE"/>
+			<result property="vehicleId" column="VEHICLE_ID" jdbcType="INTEGER"/>
+			<result property="cardNumber" column="CARD_NUMBER" jdbcType="VARCHAR"/>
+			<result property="estimateDriver" column="ESTIMATE_DRIVER" jdbcType="VARCHAR"/>
+			<result property="estimateDriverPhone" column="ESTIMATE_DRIVER_PHONE" jdbcType="VARCHAR"/>
+			<result property="facilityId" column="FACILITY_ID" jdbcType="VARCHAR"/>
+			<result property="facilityNo" column="FACILITY_NO" jdbcType="VARCHAR"/>
+			<result property="arrivalTime" column="ARRIVAL_TIME" jdbcType="TIMESTAMP"/>
+			<result property="actualTime" column="ACTUAL_TIME" jdbcType="TIMESTAMP"/>
+			<result property="placeId" column="PLACE_ID" jdbcType="INTEGER"/>
+			<result property="status" column="STATUS" jdbcType="INTEGER"/>
+			<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+			<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+			<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="INTEGER"/>
+			<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+		   <association property="placeInfo" column="PLACE_ID" select="com.richeninfo.rubbish.entity.mapper.PlaceInfoMapper.findPlaceInfoById"></association>
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="Base_Column_List">
+		ID,apply_id,ESTIMATE_WEIGHT,VEHICLE_ID,CARD_NUMBER,ESTIMATE_DRIVER,ESTIMATE_DRIVER_PHONE,FACILITY_ID,FACILITY_NO,ARRIVAL_TIME,ACTUAL_TIME,PLACE_ID,Created_By,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME
+	</sql>
+
+	<select id="selectVehicleAppointWithPlaceInfo" resultMap="VehicleAppointResultMap">
+		SELECT * from rz_vehicle_appoint rva,rz_place_info rpi where 1=1 and rva.place_id=rpi.id ${ew.sqlSegment}
+	</select>
+	<select id="selectByIDDD" resultMap="VehicleAppointResultMap" parameterType="string">
+		SELECT * FROM rz_vehicle_appoint where id=10;
+	</select>
+
+	<delete id="deleteAll">
+		DELETE FROM rz_vehicle_appoint
+	</delete>
+</mapper>

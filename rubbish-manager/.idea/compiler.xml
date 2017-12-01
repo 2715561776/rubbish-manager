@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="rubbish-bd-position" />
+        <module name="rubbish-entity" />
+        <module name="rubbish-profile" />
+        <module name="rubbish-service" />
+        <module name="rubbish-web" />
+        <module name="rubbish-webview" />
+        <module name="rubbish-weighbridge" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="rubbish-bd-position" target="1.8" />
+      <module name="rubbish-entity" target="1.8" />
+      <module name="rubbish-manager" target="1.6" />
+      <module name="rubbish-parent" target="1.8" />
+      <module name="rubbish-profile" target="1.8" />
+      <module name="rubbish-service" target="1.8" />
+      <module name="rubbish-web" target="1.8" />
+      <module name="rubbish-webview" target="1.8" />
+      <module name="rubbish-weighbridge" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

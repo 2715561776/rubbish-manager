@@ -1,0 +1,115 @@
+$mainColor: #20a0ff; // button-info 颜色
+.el-table th {
+  background: #eff4f8
+}
+
+.el-button + .el-button {
+  margin-left: 0px;
+}
+
+.el-pagination button, .el-pagination span {
+  cursor: pointer;
+}
+
+// 修改 element 的一些默认样式
+.main {
+  .el-tabs--border-card {
+    .el-tabs__header {
+      border-bottom: 2px solid $mainColor;
+      .el-tabs__item {
+        &.is-active {
+          background: $mainColor;
+          color: #fff;
+        }
+      }
+    }
+    .el-tabs__content {
+      padding: 15px 0;
+      .el-tree {
+        margin-top: 15px;
+      }
+      .tab-pane-top {
+        .el-input {
+          input {
+            border-radius: 0;
+          }
+        }
+        .el-button--primary {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+// 公共的样式
+.main {
+  margin: 10px 15px;
+  box-sizing: border-box;
+  position: absolute;
+  width: calc(100% - 30px);
+  height: calc(100% - 100px);
+  background: #fff;
+  ul.el-menu {
+    height: 100%;
+    background: #20a0ff;
+    .el-menu-item {
+      text-align: center;
+      height: 80px;
+      &, .el-submenu__title {
+        transition: none;
+      }
+      &:hover {
+        text-align: center;
+        height: 80px;
+        border-bottom: 3px solid #fff;
+      }
+      a {
+        display: inline-block;
+        text-align: center;
+        height: 60px;
+        color: #20a0ff;
+        width: 100%;
+        span {
+          display: inline-block;
+          height: 60px;
+          text-align: center;
+        }
+      }
+      &.is-active a {
+        display: inline-block;
+        text-align: center;
+        height: 60px;
+        color: #20a0ff;
+        width: 100%;
+        span {
+          display: inline-block;
+          text-align: center;
+          height: 60px;
+          border-bottom: 3px solid #20a0ff !important;
+        }
+      }
+      &:hover a {
+        display: inline-block;
+        text-align: center;
+        height: 60px;
+        color: #20a0ff;
+        width: 100%;
+        span {
+          display: inline-block;
+          text-align: center;
+          height: 60px;
+          border-bottom: 3px solid #20a0ff !important;
+        }
+      }
+    }
+  }
+}
+
+// 地图的样式
+#amap{
+  z-index:9;
+}
+

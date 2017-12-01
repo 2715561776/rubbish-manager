@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.itcloudinfo:icf-commons-fastjson:1.0.8-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/icf-commons-fastjson/1.0.8-SNAPSHOT/icf-commons-fastjson-1.0.8-20171018.074317-4.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/icf-commons-fastjson/1.0.8-SNAPSHOT/icf-commons-fastjson-1.0.8-20171018.074317-4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/icf-commons-fastjson/1.0.8-SNAPSHOT/icf-commons-fastjson-1.0.8-20171018.074317-4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

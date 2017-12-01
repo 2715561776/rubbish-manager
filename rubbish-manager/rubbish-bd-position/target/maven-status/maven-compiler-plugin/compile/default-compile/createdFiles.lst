@@ -1,0 +1,3 @@
+com\richeninfo\rubbish\bdposition\TCPServerMain.class
+com\richeninfo\rubbish\bdposition\handler\ServiceHandler.class
+com\richeninfo\rubbish\bdposition\service\MsgProcessService.class

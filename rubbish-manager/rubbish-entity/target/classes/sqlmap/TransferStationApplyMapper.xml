@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.TransferStationApplyMapper">
+
+	<resultMap id="TransferStationApplyResultMap" type="com.richeninfo.rubbish.entity.model.TransferStationApply">
+		<id property="id" column="id" jdbcType="INTEGER"/>
+		<result property="applyId" column="apply_id" jdbcType="INTEGER"/>
+		<result property="weight" column="WEIGHT" jdbcType="DOUBLE"/>
+		<result property="vehicleId" column="VEHICLE_ID" jdbcType="INTEGER"/>
+		<result property="cardNumber" column="CARD_NUMBER" jdbcType="VARCHAR"/>
+		<result property="driver" column="DRIVER" jdbcType="VARCHAR"/>
+		<result property="driverPhone" column="DRIVER_PHONE" jdbcType="VARCHAR"/>
+		<result property="facilityId" column="FACILITY_ID" jdbcType="VARCHAR"/>
+		<result property="facilityNo" column="FACILITY_NO" jdbcType="VARCHAR"/>
+		<result property="facilityName" column="FACILITY_NAME" jdbcType="VARCHAR"/>
+		<result property="arrivalTime" column="ARRIVAL_TIME" jdbcType="TIMESTAMP"/>
+		<result property="actualTime" column="ACTUAL_TIME" jdbcType="TIMESTAMP"/>
+		<result property="placeId" column="PLACE_ID" jdbcType="INTEGER"/>
+		<result property="status" column="STATUS" jdbcType="INTEGER"/>
+		<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="INTEGER"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="Base_Column_List">
+		id,apply_id,WEIGHT,VEHICLE_ID,CARD_NUMBER,DRIVER,DRIVER_PHONE,FACILITY_ID,FACILITY_NO,FACILITY_NAME,ARRIVAL_TIME,ACTUAL_TIME,PLACE_ID,Created_By,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME,STATUS
+	</sql>
+
+	<select id="selectListByStutus" resultMap="TransferStationApplyResultMap">
+		SELECT * from rz_transfer_station_apply
+	</select>
+	
+	<delete id="deleteAll">
+		DELETE FROM rz_transfer_station_apply
+	</delete>
+</mapper>

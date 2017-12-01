@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: com.itcloudinfo:apache-poi-write:1.0.2-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/apache-poi-write/1.0.2-SNAPSHOT/apache-poi-write-1.0.2-20170928.031334-1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/apache-poi-write/1.0.2-SNAPSHOT/apache-poi-write-1.0.2-20170928.031334-1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/itcloudinfo/apache-poi-write/1.0.2-SNAPSHOT/apache-poi-write-1.0.2-20170928.031334-1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

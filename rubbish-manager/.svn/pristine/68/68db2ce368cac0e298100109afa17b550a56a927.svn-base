@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.richeninfo.rubbish.entity.mapper.ApplyMapper">
+
+	<resultMap id="ApplyResultMap" type="com.richeninfo.rubbish.entity.model.Apply">
+			<id property="id" column="ID" jdbcType="INTEGER"/>
+			<result property="type" column="Type" jdbcType="INTEGER"/>
+			<result property="weight" column="WEIGHT" jdbcType="DOUBLE"/>
+			<result property="vehicleId" column="VEHICLE_ID" jdbcType="INTEGER"/>
+			<result property="licensePlatNumber" column="LICENSE_PLAT_NUMBER" jdbcType="VARCHAR"/>
+			<result property="simNo" column="SIM_NO" jdbcType="VARCHAR"/>
+			<result property="status" column="status" jdbcType="INTEGER"/>
+			<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+			<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+			<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="INTEGER"/>
+			<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+			<result property="startTime" column="START_TIME" jdbcType="TIMESTAMP"/>
+			<result property="endTime" column="END_TIME" jdbcType="TIMESTAMP"/>
+			<result property="startPlace" column="start_place" jdbcType="INTEGER"/>
+			<result property="endPlace" column="end_place" jdbcType="INTEGER"/>
+	</resultMap>
+
+	<resultMap id="ApplyResultWithPlaceMap" type="com.richeninfo.rubbish.entity.model.Apply">
+		<id property="id" column="ID" jdbcType="INTEGER"/>
+		<result property="type" column="Type" jdbcType="INTEGER"/>
+		<result property="weight" column="WEIGHT" jdbcType="DOUBLE"/>
+		<result property="vehicleId" column="VEHICLE_ID" jdbcType="INTEGER"/>
+		<result property="licensePlatNumber" column="LICENSE_PLAT_NUMBER" jdbcType="VARCHAR"/>
+		<result property="simNo" column="SIM_NO" jdbcType="VARCHAR"/>
+		<result property="status" column="status" jdbcType="INTEGER"/>
+		<result property="createdBy" column="Created_By" jdbcType="INTEGER"/>
+		<result property="createdTime" column="CREATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="lastupdatedBy" column="LASTUPDATED_BY" jdbcType="INTEGER"/>
+		<result property="lastupdatedTime" column="LASTUPDATED_TIME" jdbcType="TIMESTAMP"/>
+		<result property="startTime" column="START_TIME" jdbcType="TIMESTAMP"/>
+		<result property="endTime" column="END_TIME" jdbcType="TIMESTAMP"/>
+		<result property="startPlace" column="start_place" jdbcType="INTEGER"/>
+		<result property="endPlace" column="end_place" jdbcType="INTEGER"/>
+		<association property="startPlaceInfo" column="start_place" select="com.richeninfo.rubbish.entity.mapper.PlaceInfoMapper.findPlaceInfoById"></association>
+		<association property="endPlaceInfo" column="end_place" select="com.richeninfo.rubbish.entity.mapper.PlaceInfoMapper.findPlaceInfoById"></association>
+	</resultMap>
+
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="Base_Column_List">
+		ID,Type,WEIGHT,VEHICLE_ID,LICENSE_PLAT_NUMBER,Created_By,CREATED_TIME,LASTUPDATED_BY,LASTUPDATED_TIME,status,SIM_NO,START_TIME,END_TIME
+	</sql>
+	
+	<delete id="deleteAll">
+		DELETE FROM rz_apply
+	</delete>
+
+	<select id="selectApplyInOrOut" resultMap="ApplyResultWithPlaceMap">
+		SELECT * from rz_apply where 1=1  ${ew.sqlSegment}
+	</select>
+</mapper>
